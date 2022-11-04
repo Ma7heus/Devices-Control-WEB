@@ -11,8 +11,12 @@
 		<h:form>
 			<p:fieldset legend="Lista de Status">
 				<p:growl id="msg" />
-				<p:dataTable id="tabelaStatus" size="small"
-					var="status" value="#{statusBean.listaStatus}">
+				
+				
+				
+				
+				<p:dataTable id="tabelaStatus" size="small" var="status"
+					value="#{statusBean.listaStatus}">
 
 					<p:column sortBy="#{status.id}">
 						<f:facet name="header">ID Status</f:facet>
@@ -23,16 +27,29 @@
 						<f:facet name="header">Descrição</f:facet>
 						<p:outputLabel value="#{status.descricao}" />
 					</p:column>
-					
-				
 
+					<p:column>
+						<f:facet name="header">Opções</f:facet>
+						<p:commandButton id="atualizaStatus" icon="pi pi-pencil" />
 
+						<p:commandButton id="removerStatus"
+							class="ui-button-warning rounded-button" icon="pi pi-trash">
+							<p:confirm header="Confirmação" message="Excluir Funcionario?"
+								icon="pi pi-exclamation-triangle" />
+						</p:commandButton>
+
+						<p:confirmDialog hideEffect="fade" global="true" showEffect="fade"
+							width="300" message="Excluir Funcionario?" header="Confirm"
+							severity="warn">
+
+							<p:commandButton value="Yes" type="button" icon="pi pi-check"
+								styleClass="ui-confirmdialog-yes" />
+
+							<p:commandButton value="No" type="button" icon="pi pi-times"
+								styleClass="ui-confirmdialog-no ui-button-flat" />
+						</p:confirmDialog>
+					</p:column>
 				</p:dataTable>
-
-
-
-
-
 			</p:fieldset>
 		</h:form>
 	</ui:define>

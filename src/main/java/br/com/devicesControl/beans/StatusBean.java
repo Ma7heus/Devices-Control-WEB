@@ -6,7 +6,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import javax.ws.rs.core.GenericType;
-
 import br.com.common.DTO.StatusDTO;
 import br.com.common.resources.StatusResource;
 import br.com.devicesControl.rest.ClientRestProxyService;
@@ -32,18 +31,12 @@ public class StatusBean extends AbstractFormBean {
 		this.listaStatus = (List<StatusDTO>) getStatusResource()
 				.findAll().readEntity(new GenericType<List<StatusDTO>>() {});
 	}
-
-
-
-
-
-
-
+	
 	private StatusResource getStatusResource() {
 		StatusResource statusResource = new ClientRestProxyService().createProxy(StatusResource.class);
 		return statusResource;
 	}
-
+	
 	public StatusDTO getStatusDTO() {
 		return statusDTO;
 	}
