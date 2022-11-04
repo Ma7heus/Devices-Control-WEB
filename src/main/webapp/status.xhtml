@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="titulo">
+		<h:form>
+			<p:fieldset legend="Lista de Status">
+				<p:growl id="msg" />
+				<p:dataTable id="tabelaStatus" size="small"
+					var="status" value="#{statusBean.listaStatus}">
+
+					<p:column sortBy="#{status.id}">
+						<f:facet name="header">ID Status</f:facet>
+						<p:outputLabel value="#{status.id}" />
+					</p:column>
+
+					<p:column sortBy="#{status.descricao}">
+						<f:facet name="header">Descrição</f:facet>
+						<p:outputLabel value="#{status.descricao}" />
+					</p:column>
+					
+				
+
+
+				</p:dataTable>
+
+
+
+
+
+			</p:fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

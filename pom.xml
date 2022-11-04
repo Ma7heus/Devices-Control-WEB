@@ -31,7 +31,12 @@
 			<version>4.5.6.Final</version>
 		</dependency>
 		
-
+		<dependency>
+			<groupId>br.com.common</groupId>
+  			<artifactId>DevicesControlCommon</artifactId>
+ 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
